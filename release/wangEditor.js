@@ -1112,7 +1112,7 @@ function Head(editor) {
         width: 100,
         $title: $('<p>设置标题</p>'),
         type: 'list', // droplist 以列表形式展示
-        list: [{ $elem: $('<h1>H1</h1>'), value: '<h1>' }, { $elem: $('<h2>H2</h2>'), value: '<h2>' }, { $elem: $('<h3>H3</h3>'), value: '<h3>' }, { $elem: $('<h4>H4</h4>'), value: '<h4>' }, { $elem: $('<h5>H5</h5>'), value: '<h5>' }, { $elem: $('<p>正文</p>'), value: '<p>' }],
+        list: [{ $elem: $('<h1>H1</h1>'), value: 7 }, { $elem: $('<h2>H2</h2>'), value: 6 }, { $elem: $('<h3>H3</h3>'), value: 5 }, { $elem: $('<h4>H4</h4>'), value: 4 }, { $elem: $('<h5>H5</h5>'), value: 3 }, { $elem: $('<h6>H6</h6>'), value: 2 },{ $elem: $('<p>正文</p>'), value: 1}],
         onClick: function onClick(value) {
             // 注意 this 是指向当前的 Head 对象
             _this._command(value);
@@ -1135,7 +1135,8 @@ Head.prototype = {
             return;
         }
 
-        editor.cmd.do('formatBlock', value);
+        // editor.cmd.do('formatBlock', value);
+        editor.cmd.do('fontSize', value);
     },
 
     // 试图改变 active 状态
